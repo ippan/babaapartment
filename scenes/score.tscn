@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/score.gd" type="Script" id=1]
+[ext_resource path="res://images/boom.png" type="Texture" id=2]
+[ext_resource path="res://images/angry.png" type="Texture" id=3]
+[ext_resource path="res://images/rope.png" type="Texture" id=4]
+[ext_resource path="res://images/fire.png" type="Texture" id=5]
+
+[node name="score" type="Node2D"]
+z_index = 30
+script = ExtResource( 1 )
+
+[node name="boom" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="angry" type="Sprite" parent="boom"]
+position = Vector2( -22.5185, -7.40741 )
+texture = ExtResource( 3 )
+
+[node name="rope" type="Sprite" parent="."]
+position = Vector2( 1.77777, -33.4815 )
+texture = ExtResource( 4 )
+offset = Vector2( 0, -137 )
+
+[node name="fire_point" type="Node2D" parent="rope"]
+position = Vector2( 0, -271.407 )
+
+[node name="fire" type="Sprite" parent="."]
+position = Vector2( 1.18518, -306.667 )
+texture = ExtResource( 5 )
+

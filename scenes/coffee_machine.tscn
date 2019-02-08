@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/item.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+extents = Vector2( 50, 60 )
+
+[node name="coffee_machine" type="RigidBody2D"]
+z_index = 30
+mode = 1
+script = ExtResource( 1 )
+item_mode = "repeat"
+
+[node name="shape" type="CollisionShape2D" parent="."]
+position = Vector2( 0, -50 )
+shape = SubResource( 1 )
+

@@ -1,0 +1,99 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/title.gd" type="Script" id=1]
+[ext_resource path="res://images/apartment_back.png" type="Texture" id=2]
+[ext_resource path="res://images/door.png" type="Texture" id=3]
+[ext_resource path="res://images/toliet_door.png" type="Texture" id=4]
+[ext_resource path="res://scenes/elevator_door.tscn" type="PackedScene" id=5]
+[ext_resource path="res://images/apartment_front.png" type="Texture" id=6]
+[ext_resource path="res://images/title.png" type="Texture" id=7]
+
+[node name="title" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="sprite" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 512, 384 )
+texture = ExtResource( 2 )
+
+[node name="door" type="Sprite" parent="sprite"]
+position = Vector2( -205, -270 )
+texture = ExtResource( 3 )
+
+[node name="door_2" type="Sprite" parent="sprite"]
+position = Vector2( 94, -271 )
+texture = ExtResource( 3 )
+
+[node name="door_3" type="Sprite" parent="sprite"]
+position = Vector2( 191, -271 )
+texture = ExtResource( 3 )
+
+[node name="door_4" type="Sprite" parent="sprite"]
+position = Vector2( 192, -129 )
+texture = ExtResource( 3 )
+
+[node name="door_5" type="Sprite" parent="sprite"]
+position = Vector2( 95, -127 )
+texture = ExtResource( 3 )
+
+[node name="door_6" type="Sprite" parent="sprite"]
+position = Vector2( -204, -124 )
+texture = ExtResource( 3 )
+
+[node name="door_7" type="Sprite" parent="sprite"]
+position = Vector2( -303, -126 )
+texture = ExtResource( 3 )
+
+[node name="door_8" type="Sprite" parent="sprite"]
+position = Vector2( -302, 12 )
+texture = ExtResource( 3 )
+
+[node name="door_9" type="Sprite" parent="sprite"]
+position = Vector2( -205, 14 )
+texture = ExtResource( 3 )
+
+[node name="door_10" type="Sprite" parent="sprite"]
+position = Vector2( -301, 155 )
+texture = ExtResource( 3 )
+
+[node name="door_11" type="Sprite" parent="sprite"]
+position = Vector2( -205, 154 )
+texture = ExtResource( 3 )
+
+[node name="door_12" type="Sprite" parent="sprite"]
+position = Vector2( 92, 153 )
+texture = ExtResource( 3 )
+
+[node name="door_13" type="Sprite" parent="sprite"]
+position = Vector2( 192, 156 )
+texture = ExtResource( 3 )
+
+[node name="door_14" type="Sprite" parent="sprite"]
+position = Vector2( -304, 304 )
+texture = ExtResource( 4 )
+
+[node name="elevator_door" parent="sprite" instance=ExtResource( 5 )]
+position = Vector2( -72, -217 )
+
+[node name="elevator_door_2" parent="sprite" instance=ExtResource( 5 )]
+position = Vector2( -74, -76 )
+
+[node name="elevator_door_3" parent="sprite" instance=ExtResource( 5 )]
+position = Vector2( -74, 67 )
+
+[node name="elevator_door_4" parent="sprite" instance=ExtResource( 5 )]
+position = Vector2( -71, 205 )
+
+[node name="elevator_door_5" parent="sprite" instance=ExtResource( 5 )]
+position = Vector2( -71, 353 )
+
+[node name="sprite_3" type="Sprite" parent="."]
+position = Vector2( 512, 384 )
+z_index = 30
+texture = ExtResource( 6 )
+
+[node name="sprite_2" type="Sprite" parent="."]
+position = Vector2( 517, 267 )
+z_index = 40
+texture = ExtResource( 7 )
+

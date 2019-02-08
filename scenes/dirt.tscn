@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://images/dirt.png" type="Texture" id=1]
+[ext_resource path="res://scenes/dirt.gd" type="Script" id=2]
+
+[node name="dirt" type="Sprite"]
+z_index = 28
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+

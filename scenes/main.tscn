@@ -1,0 +1,171 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://scenes/main.gd" type="Script" id=1]
+[ext_resource path="res://images/apartment_back.png" type="Texture" id=2]
+[ext_resource path="res://images/apartment_front.png" type="Texture" id=3]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/transport.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/counter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/eating_room.tscn" type="PackedScene" id=7]
+[ext_resource path="res://images/toliet_door.png" type="Texture" id=8]
+[ext_resource path="res://scenes/home_room.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/clean_room.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/elevator.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/ladder.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/coffee_machine.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/broom.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/score.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/mood_alert.tscn" type="PackedScene" id=16]
+
+[node name="main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="apartment_back" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( 512, 384 )
+z_index = 10
+texture = ExtResource( 2 )
+
+[node name="apartment_front" type="Sprite" parent="apartment_back"]
+z_index = 10
+texture = ExtResource( 3 )
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 854, 733 )
+current_level = 0
+speed = 250.0
+
+[node name="left_boundary" type="Node2D" parent="."]
+position = Vector2( 63, 728 )
+
+[node name="right_boundary" type="Node2D" parent="."]
+position = Vector2( 878, 728 )
+
+[node name="levels" type="Node2D" parent="."]
+
+[node name="0" type="Node2D" parent="levels"]
+position = Vector2( 519, 732 )
+
+[node name="transport" parent="levels/0" instance=ExtResource( 5 )]
+position = Vector2( -431, -31 )
+
+[node name="counter" parent="levels/0" instance=ExtResource( 6 )]
+position = Vector2( 209, 7 )
+
+[node name="eating_room" parent="levels/0" instance=ExtResource( 7 )]
+position = Vector2( 102, -56 )
+
+[node name="sprite" type="Sprite" parent="levels/0"]
+position = Vector2( -309, -45 )
+z_index = 20
+texture = ExtResource( 8 )
+
+[node name="1" type="Node2D" parent="levels"]
+editor/display_folded = true
+position = Vector2( 520, 584 )
+
+[node name="transport_down" parent="levels/1" instance=ExtResource( 5 )]
+position = Vector2( -429, -31 )
+direction = -1
+
+[node name="transport_up" parent="levels/1" instance=ExtResource( 5 )]
+position = Vector2( 310, -30 )
+fade_direction = 1
+
+[node name="home_room" parent="levels/1" instance=ExtResource( 9 )]
+position = Vector2( -344, 3 )
+
+[node name="home_room_2" parent="levels/1" instance=ExtResource( 9 )]
+position = Vector2( -246, 4 )
+
+[node name="home_room_3" parent="levels/1" instance=ExtResource( 9 )]
+position = Vector2( 51, 4 )
+
+[node name="home_room_4" parent="levels/1" instance=ExtResource( 9 )]
+position = Vector2( 151, 4 )
+
+[node name="2" type="Node2D" parent="levels"]
+editor/display_folded = true
+position = Vector2( 526, 443 )
+
+[node name="transport_up" parent="levels/2" instance=ExtResource( 5 )]
+position = Vector2( -436, -30 )
+
+[node name="transport_down" parent="levels/2" instance=ExtResource( 5 )]
+position = Vector2( 307, -30 )
+fade_direction = 1
+direction = -1
+
+[node name="home_room_5" parent="levels/2" instance=ExtResource( 9 )]
+position = Vector2( -350, 3 )
+
+[node name="home_room_6" parent="levels/2" instance=ExtResource( 9 )]
+position = Vector2( -253, 5 )
+
+[node name="pool" parent="levels/2" instance=ExtResource( 10 )]
+position = Vector2( 36, 9 )
+
+[node name="3" type="Node2D" parent="levels"]
+position = Vector2( 525, 302 )
+
+[node name="transport_up" parent="levels/3" instance=ExtResource( 5 )]
+position = Vector2( 304, -29 )
+fade_direction = 1
+
+[node name="transport_down" parent="levels/3" instance=ExtResource( 5 )]
+position = Vector2( -437, -32 )
+direction = -1
+
+[node name="home_room_7" parent="levels/3" instance=ExtResource( 9 )]
+position = Vector2( -350, 5 )
+
+[node name="home_room_8" parent="levels/3" instance=ExtResource( 9 )]
+position = Vector2( -251, 5 )
+
+[node name="home_room_9" parent="levels/3" instance=ExtResource( 9 )]
+position = Vector2( 46, 3 )
+
+[node name="home_room_10" parent="levels/3" instance=ExtResource( 9 )]
+position = Vector2( 145, 4 )
+
+[node name="4" type="Node2D" parent="levels"]
+position = Vector2( 524, 161 )
+
+[node name="transport_down" parent="levels/4" instance=ExtResource( 5 )]
+position = Vector2( 307, -31 )
+fade_direction = 1
+direction = -1
+
+[node name="home_room_11" parent="levels/4" instance=ExtResource( 9 )]
+position = Vector2( -249, 2 )
+
+[node name="home_room_12" parent="levels/4" instance=ExtResource( 9 )]
+position = Vector2( 47, -1 )
+
+[node name="home_room_13" parent="levels/4" instance=ExtResource( 9 )]
+position = Vector2( 147, 0 )
+
+[node name="gym" parent="levels/4" instance=ExtResource( 10 )]
+position = Vector2( -486, 5 )
+
+[node name="elevator" parent="." instance=ExtResource( 11 )]
+editor/display_folded = true
+position = Vector2( 445, 736 )
+
+[node name="ladder" parent="." instance=ExtResource( 12 )]
+position = Vector2( 600, 742 )
+
+[node name="coffee_machine" parent="." instance=ExtResource( 13 )]
+position = Vector2( 314, 737 )
+
+[node name="broom" parent="." instance=ExtResource( 14 )]
+position = Vector2( 236, 158 )
+
+[node name="score" parent="." instance=ExtResource( 15 )]
+position = Vector2( 964, 353 )
+
+[node name="mood_alert" parent="." instance=ExtResource( 16 )]
+position = Vector2( 964, 462 )
+
+
+[editable path="elevator"]
